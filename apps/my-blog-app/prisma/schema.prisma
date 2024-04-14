@@ -18,3 +18,10 @@ model User {
   updatedAt DateTime @updatedAt
   username  String   @unique
 }
+
+model Blog {
+  createdAt DateTime @default(now())
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  name      String?
+  updatedAt DateTime @updatedAt
+}
